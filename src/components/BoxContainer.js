@@ -10,7 +10,7 @@ class BoxContainer extends React.Component {
     }
     render() {
         return (
-            <div class="boxes-app">
+            <div className="boxes-app">
                 <h1>Boxes!</h1>
                 <h2>Total: {
                     this.state.likes.reduce((total, howMany) => total + howMany, 0)
@@ -40,25 +40,29 @@ class BoxContainer extends React.Component {
     }
     _updateLikes = (boxIndex) => {
         this.setState({
-            likes: this.state.likes.map((howMany, i) => {
-                if (i === boxIndex) {
-                    return howMany + 1;
-                } else {
-                    return howMany;
-                }
-            })
+            likes: this.state.likes.map((howMany, i) => (
+                i === boxIndex ? howMany + 1 : howMany
+            ))
+//            likes: this.state.likes.map((howMany, i) => {
+//                if (i === boxIndex) {
+//                    return howMany + 1;
+//                } else {
+//                    return howMany;
+//                }
+//            })
         })
     }
     _removeBox = (boxIndex) => {
         this.setState({
-            likes: this.state.likes.filter((howMany, i) => {
-                return i !== boxIndex;
+            likes: this.state.likes.filter((howMany, i) => i !== boxIndex)
+//            likes: this.state.likes.filter((howMany, i) => {
+//                return i !== boxIndex;
                 // if (i === boxIndex) {
                     // return false; // don't include in next version of state
                 // } else {
                     // return true;
                 // }
-            })
+//            })
         });
     }
 }

@@ -10,12 +10,12 @@ class Box extends React.Component {
                     onClick={() => {
                         this.props.handleAdd(this.props.index)
                     }}
-                >😍</button>
+                ><span role="img" aria-label="thumbs up">👍</span></button>
                 <button
                     onClick={() => {
                         this.props.handleRemove(this.props.index)
                     }}
-                >💥</button>
+                ><span role="img" aria-label="boom">💥</span></button>
             </div>
         );
     }
